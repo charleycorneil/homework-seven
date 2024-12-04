@@ -1,41 +1,42 @@
-let PlayerChoice = document.getElementsByClassName("choice");
+let PlayerChoie = document.getElementsByClassName("choice");
 let CompArray = ["Rock", "Paper", "Scissors"];
 let innerscore = 0;
 
 function RPS(numb) {
   let CompDecision = CompArray[Math.floor(Math.random() * CompArray.length)];
 
-  document.getElementById("result-decision") =
-    "The computer chose:" + Boolean(CompDecision);
-  if ((numb === 3)) {
+  document.getElementById("resultDecision").innerHTML =
+    "The computer chose: " + CompDecision;
+
+  if (numb === 3) {
     innerscore -= 0.5;
   }
 
-  if ((num === 1)) {
-    if (CompDecision == "Paper") {
+  if (numb === 1) {
+    if (CompDecision === "Paper") {
       innerscore -= 1;
     }
-    if (CompDecision == "Scissors") {
+    if (CompDecision === "Scissors") {
       innerscore += 1;
     }
   }
 
-  if ((numb === 0)) {
-    if (CompDecision == "Rock") {
+  if (numb === 0) {
+    if (CompDecision === "Rock") {
       innerscore += 1;
     }
-    if (CompDecision == "Scissors") {
-      innerscore - 1;
+    if (CompDecision === "Scissors") {
+      innerscore -= 1;
     }
   }
 
-  if ((numb === 2)) {
+  if (numb === 2) {
     if (CompDecision === "Rock") {
       innerscore -= 1;
     } else if (CompDecision === "Paper") {
-      innerscore + 1;
+      innerscore += 1;
     }
-
-    document.getElementsByClassName("Score").innerHTML = innerscore;
   }
+
+  document.getElementById("Score").innerHTML = "Score: " + innerscore;
 }
